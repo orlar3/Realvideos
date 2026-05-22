@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Redirecting...</title>
+
+  <style>
+    body{
+      margin:0;
+      padding:0;
+      background:#000;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      font-family:Arial,sans-serif;
+      color:white;
+      text-align:center;
+    }
+
+    .countdown-box{
+      background:#111;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 0 20px rgba(255,0,0,0.7);
+      width:90%;
+      max-width:400px;
+    }
+
+    h1{
+      font-size:32px;
+      margin-bottom:20px;
+      color:#00ff99;
+    }
+
+    #count{
+      font-size:80px;
+      font-weight:bold;
+      color:#ffcc00;
+      animation:pulse 1s infinite;
+    }
+
+    p{
+      margin-top:20px;
+      font-size:18px;
+    }
+
+    @keyframes pulse{
+      0%{transform:scale(1);}
+      50%{transform:scale(1.1);}
+      100%{transform:scale(1);}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="countdown-box">
+    <h1>🎉 Please Wait...</h1>
+
+    <div id="count">5</div>
+
+    <p>Redirecting to giveaway page...</p>
+  </div>
+
+  <script>
+    // YOUR REDIRECT LINK
+    const redirectLink =
+      "https://villagetraitgarret.com/m86z85zd61?key=ce12899efd68248dc3c02d8a16a504c3";
+
+    // COUNTDOWN TIME
+    let timeLeft = 5;
+
+    const countElement = document.getElementById("count");
+
+    const timer = setInterval(() => {
+      timeLeft--;
+
+      countElement.innerText = timeLeft;
+
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+
+        // REDIRECT
+        window.location.href = redirectLink;
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
