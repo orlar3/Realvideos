@@ -1,0 +1,41 @@
+<script>
+  // Countdown time in seconds
+  let countdown = 5;
+
+  // Create countdown display
+  const countdownBox = document.createElement("div");
+  countdownBox.style.position = "fixed";
+  countdownBox.style.top = "0";
+  countdownBox.style.left = "0";
+  countdownBox.style.width = "100%";
+  countdownBox.style.height = "100%";
+  countdownBox.style.background = "rgba(0,0,0,0.9)";
+  countdownBox.style.display = "flex";
+  countdownBox.style.justifyContent = "center";
+  countdownBox.style.alignItems = "center";
+  countdownBox.style.flexDirection = "column";
+  countdownBox.style.color = "#fff";
+  countdownBox.style.fontSize = "50px";
+  countdownBox.style.fontWeight = "bold";
+  countdownBox.style.zIndex = "9999";
+  countdownBox.innerHTML = `
+    <div>🎉 Redirecting...</div>
+    <div id="countNumber">${countdown}</div>
+  `;
+
+  document.body.appendChild(countdownBox);
+
+  // Start countdown
+  const timer = setInterval(() => {
+    countdown--;
+    document.getElementById("countNumber").innerText = countdown;
+
+    if (countdown <= 0) {
+      clearInterval(timer);
+
+      // Redirect to your link
+      window.location.href =
+        "https://villagetraitgarret.com/m86z85zd61?key=ce12899efd68248dc3c02d8a16a504c3";
+    }
+  }, 1000);
+</script>
